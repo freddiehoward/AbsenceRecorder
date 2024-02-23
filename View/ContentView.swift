@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var divisions: [Division]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        //division is a temp variable to hold each element in divisions
+        List(divisions, id: \.self.code) { division in
+            Text("\(division.code)")
+                .padding()
+            //4:48 in absence recorder part 4 video
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(divisions: Division.examples)
 }
