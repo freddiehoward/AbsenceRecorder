@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DivisionsView: View {
     
-    var divisions: [Division]
+    @ObservedObject var viewModel = ViewModel.shared
     
     @State var currentDate = Date()
     
     var body: some View {
         //division is a temp variable to hold each element in divisions
-        NavigationView{
-            List(divisions, id: \.self.code) { division in Text("\(division.code)")
-                    .padding()
-                //4:48 in absence recorder part 4 video
-
+        NavigationStack{
+            List(viewModel.divisions, id: \.self.code) { division in HStack {
+                NavigationLink(destination: AbsenceView(division: division)) {
+                    DivisionItem(division: division)
+                }
             }
+        }
             .navigationTitle(currentDate.getShortDate())
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -40,5 +41,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(divisions: Division.examples)
+    DivisionsView()
 }
