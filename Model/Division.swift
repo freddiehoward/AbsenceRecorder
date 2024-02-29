@@ -12,9 +12,33 @@ class Division {
     let code: String
     var students: [Student] = []
     
+    var absences: [Absence] = []
+    
     init(code: String) {
         self.code = code
     }
+    
+    func getAbsence(for date: Date) -> Absence? {
+        
+        //.first means that the first item in absences to satisfy closure ie return true in below closure will be returned
+        return absences.first {
+            let comparison = Calendar.current.compare($0.takenOn, to: date, toGranularity: .day)
+            return comparison == .orderedSame
+        }
+        
+    }
+    
+    func createAbsenceOrGetExistingIfAvailable(for date: Date) -> Absence {
+        //the if is checking whether getAbsence returns a data as if there is no previous absence getAbsence returns null
+        if let existingAbsence = getAbsence(for: date) {
+            return existingAbsence
+        }
+        else {
+            let absence = Absence(date: date, students: students)
+            return absence
+        }
+    }
+    
     
     //this code only runs in debug mode ie not final product
     #if DEBUG
@@ -43,3 +67,5 @@ class Division {
     #endif
     
 }
+
+

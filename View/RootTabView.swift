@@ -15,7 +15,7 @@ struct RootTabView: View {
                     Image(systemName: "square.and.pencil")
                     Text("")
                 }
-            AbsenceView(division: Division.examples[0])
+            AbsenceView(absence: Absence.example)
                 .tabItem {
                     Image(systemName: "triangle")
                     Text("Class Absence")

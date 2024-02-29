@@ -17,7 +17,7 @@ struct DivisionsView: View {
         //division is a temp variable to hold each element in divisions
         NavigationStack{
             List(viewModel.divisions, id: \.self.code) { division in HStack {
-                NavigationLink(destination: AbsenceView(division: division)) {
+                NavigationLink(destination: AbsenceView(absence: division.createAbsenceOrGetExistingIfAvailable(for: currentDate))) {
                     DivisionItem(division: division)
                 }
             }

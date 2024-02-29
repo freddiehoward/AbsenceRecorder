@@ -25,7 +25,6 @@
     },
     {
       "enabled" : false,
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:AbsenceRecorder.xcodeproj",
         "identifier" : "DBA2E5C42B87563400062228",
