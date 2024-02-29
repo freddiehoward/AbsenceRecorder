@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "012F0B96-54BD-4D1A-A5E1-76076A8D80F5",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:AbsenceRecorder.xcodeproj",
+      "identifier" : "DBA2E5AA2B87561700062228",
+      "name" : "AbsenceRecorder"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:AbsenceRecorder.xcodeproj",
+        "identifier" : "DBA2E5BA2B87563400062228",
+        "name" : "AbsenceRecorderTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:AbsenceRecorder.xcodeproj",
+        "identifier" : "DBA2E5C42B87563400062228",
+        "name" : "AbsenceRecorderUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
