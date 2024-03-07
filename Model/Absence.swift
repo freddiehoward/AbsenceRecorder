@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Absence {
+//to make divisions data codable as one of its pieces of data is of type absence which is not encodable without it itself conforming to codable
+class Absence: Codable {
     let takenOn: Date
     var studentAbsences: [StudentAbsence]
     

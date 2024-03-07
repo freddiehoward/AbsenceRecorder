@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Student {
+//to make divisions data codable as one of its pieces of data is of type student which is not encodable without it itself conforming to codable
+class Student: Codable {
     
     let firstName: String
     let lastName: String

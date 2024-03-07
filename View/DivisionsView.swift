@@ -22,6 +22,9 @@ struct DivisionsView: View {
                 }
             }
         }
+            .onAppear(perform: {
+                viewModel.saveToFile()
+            })
             .navigationTitle(currentDate.getShortDate())
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

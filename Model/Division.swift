@@ -7,7 +7,9 @@
 
 import Foundation
 
-class Division {
+//conforms to codable so we can use json to store data in secondary storage
+
+class Division: Codable{
     
     let code: String
     var students: [Student] = []
